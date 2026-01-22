@@ -29,13 +29,13 @@ class DadoosBody extends StatelessWidget {
       child: Row(
         children: [
           Container(
-            color: Colors.pink,
+            color: Colors.deepPurpleAccent.shade100,
             child: Column(
-              children: [Image(image: AssetImage('assets/img/dado1.png'))],
+              children: [Image(image: AssetImage('assets/images/dado1.png'))],
             ),
           ),
           Container(
-            color: Colors.blue,
+            color: Colors.blue.shade100,
             child: Column(children: [Text('column 2')]),
           ),
         ],
