@@ -25,13 +25,13 @@ class DadoosBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.redAccent,
+      color: Colors.red[300],
       child: Row(
         children: [
           Container(
             color: Colors.deepPurpleAccent.shade100,
             child: Column(
-              children: [Image(image: AssetImage('assets/images/dado1.png'))],
+              children: [Image.asset('assets/images/dado1.png', width: 300)],
             ),
           ),
           Container(
