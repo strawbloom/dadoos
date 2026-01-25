@@ -8,10 +8,9 @@ class Dadoos extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.teal.shade200,
         appBar: AppBar(
           title: Text('Dadoos'),
-          backgroundColor: Colors.pink.shade400,
+          backgroundColor: Colors.pink[200],
         ),
         body: DadoosBody(),
       ),
@@ -25,20 +24,24 @@ class DadoosBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.red[300],
-      child: Row(
-        children: [
-          Container(
-            color: Colors.deepPurpleAccent.shade100,
-            child: Column(
-              children: [Image.asset('assets/images/dado1.png', width: 300)],
+      color: Colors.pink[100],
+      child: Center(
+        child: Row(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset('assets/images/dado1.png'),
+              ),
             ),
-          ),
-          Container(
-            color: Colors.blue.shade100,
-            child: Column(children: [Text('column 2')]),
-          ),
-        ],
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset('assets/images/dado6.png'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
