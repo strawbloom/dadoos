@@ -37,7 +37,7 @@ class DadoosBody extends StatelessWidget {
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Image.asset('assets/images/dado6.png'),
+                child: Image.asset('assets/images/dado4.png'),
               ),
             ),
           ],
