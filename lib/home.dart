@@ -1,3 +1,4 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 
 class Dadoos extends StatelessWidget {
@@ -18,12 +19,19 @@ class Dadoos extends StatelessWidget {
   }
 }
 
-class DadoosBody extends StatelessWidget {
+class DadoosBody extends StatefulWidget {
+  DadoosBody({super.key});
+
+  @override
+  State<DadoosBody> createState() => _DadoosBodyState();
+}
+
+class _DadoosBodyState extends State<DadoosBody> {
+  int numberLeftDice = 3;
+  int numberRightDice = 2;
+
   @override
   Widget build(BuildContext context) {
-    var numberLeftDice = 3;
-    var numberRightDice = 2;
-
     return Container(
       color: Colors.pink[100],
       child: Center(
@@ -32,13 +40,24 @@ class DadoosBody extends StatelessWidget {
             Expanded(
               child: TextButton(
                 child: Image.asset('assets/images/dado$numberLeftDice.png'),
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    numberLeftDice = Random().nextInt(6) + 1;
+                    numberRightDice = Random().nextInt(6) + 1;
+                  });
+                },
               ),
             ),
+
             Expanded(
               child: TextButton(
                 child: Image.asset('assets/images/dado$numberRightDice.png'),
-                onPressed: () {},
+                onPressed: () {
+                  setState(() {
+                    numberLeftDice = Random().nextInt(6) + 1;
+                    numberRightDice = Random().nextInt(6) + 1;
+                  });
+                },
               ),
             ),
           ],
