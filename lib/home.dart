@@ -1,5 +1,6 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Dadoos extends StatelessWidget {
   const Dadoos({super.key});
@@ -10,7 +11,18 @@ class Dadoos extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Dadoos'),
+          title: Center(
+            child: Text(
+              'dadoos',
+              style: GoogleFonts.sourGummy(
+                textStyle: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  color: Colors.white,
+                  fontSize: 35,
+                ),
+              ),
+            ),
+          ),
           backgroundColor: Colors.pink[200],
         ),
         body: DadoosBody(),
@@ -20,7 +32,7 @@ class Dadoos extends StatelessWidget {
 }
 
 class DadoosBody extends StatefulWidget {
-  DadoosBody({super.key});
+  const DadoosBody({super.key});
 
   @override
   State<DadoosBody> createState() => _DadoosBodyState();
@@ -34,34 +46,61 @@ class _DadoosBodyState extends State<DadoosBody> {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.pink[100],
-      child: Center(
-        child: Row(
-          children: [
-            Expanded(
-              child: TextButton(
-                child: Image.asset('assets/images/dado$numberLeftDice.png'),
-                onPressed: () {
-                  setState(() {
-                    numberLeftDice = Random().nextInt(6) + 1;
-                    numberRightDice = Random().nextInt(6) + 1;
-                  });
-                },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  child: Image.asset('assets/images/dado$numberLeftDice.png'),
+                  onPressed: () {
+                    setState(() {
+                      numberLeftDice = Random().nextInt(6) + 1;
+                      numberRightDice = Random().nextInt(6) + 1;
+                    });
+                  },
+                ),
               ),
-            ),
-
-            Expanded(
-              child: TextButton(
-                child: Image.asset('assets/images/dado$numberRightDice.png'),
-                onPressed: () {
-                  setState(() {
-                    numberLeftDice = Random().nextInt(6) + 1;
-                    numberRightDice = Random().nextInt(6) + 1;
-                  });
-                },
+              Expanded(
+                child: TextButton(
+                  child: Image.asset('assets/images/dado$numberRightDice.png'),
+                  onPressed: () {
+                    setState(() {
+                      numberLeftDice = Random().nextInt(6) + 1;
+                      numberRightDice = Random().nextInt(6) + 1;
+                    });
+                  },
+                ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: TextButton(
+                  child: Text(
+                    'click here to roll the dices!',
+                    style: GoogleFonts.sourGummy(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      numberLeftDice = Random().nextInt(6) + 1;
+                      numberRightDice = Random().nextInt(6) + 1;
+                    });
+                  },
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
