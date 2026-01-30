@@ -42,6 +42,13 @@ class _DadoosBodyState extends State<DadoosBody> {
   int numberLeftDice = 3;
   int numberRightDice = 2;
 
+  void rollDice() {
+    setState(() {
+      numberLeftDice = Random().nextInt(6) + 1;
+      numberRightDice = Random().nextInt(6) + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -56,10 +63,7 @@ class _DadoosBodyState extends State<DadoosBody> {
                 child: TextButton(
                   child: Image.asset('assets/images/dado$numberLeftDice.png'),
                   onPressed: () {
-                    setState(() {
-                      numberLeftDice = Random().nextInt(6) + 1;
-                      numberRightDice = Random().nextInt(6) + 1;
-                    });
+                    rollDice();
                   },
                 ),
               ),
@@ -67,10 +71,7 @@ class _DadoosBodyState extends State<DadoosBody> {
                 child: TextButton(
                   child: Image.asset('assets/images/dado$numberRightDice.png'),
                   onPressed: () {
-                    setState(() {
-                      numberLeftDice = Random().nextInt(6) + 1;
-                      numberRightDice = Random().nextInt(6) + 1;
-                    });
+                    rollDice();
                   },
                 ),
               ),
@@ -79,23 +80,23 @@ class _DadoosBodyState extends State<DadoosBody> {
           Row(
             children: [
               Expanded(
-                child: TextButton(
-                  child: Text(
-                    'click here to roll the dices!',
-                    style: GoogleFonts.sourGummy(
-                      textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 30,
-                        color: Colors.white,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: TextButton(
+                    child: Text(
+                      'click here to roll the dices!',
+                      style: GoogleFonts.sourGummy(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
+                    onPressed: () {
+                      rollDice();
+                    },
                   ),
-                  onPressed: () {
-                    setState(() {
-                      numberLeftDice = Random().nextInt(6) + 1;
-                      numberRightDice = Random().nextInt(6) + 1;
-                    });
-                  },
                 ),
               ),
             ],
