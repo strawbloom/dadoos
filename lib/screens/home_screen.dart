@@ -1,51 +1,20 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:dadoos/models/dice.dart';
 
-class Dadoos extends StatelessWidget {
-  const Dadoos({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Center(
-            child: Text(
-              'dadoos',
-              style: GoogleFonts.sourGummy(
-                textStyle: TextStyle(
-                  fontWeight: FontWeight.w800,
-                  color: Colors.white,
-                  fontSize: 35,
-                ),
-              ),
-            ),
-          ),
-          backgroundColor: Colors.pink[200],
-        ),
-        body: DadoosBody(),
-      ),
-    );
-  }
-}
-
-class DadoosBody extends StatefulWidget {
-  const DadoosBody({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<DadoosBody> createState() => _DadoosBodyState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _DadoosBodyState extends State<DadoosBody> {
-  int numberLeftDice = 3;
-  int numberRightDice = 2;
+class _HomeScreenState extends State<HomeScreen> {
+  final Dice _dice = Dice();
 
   void rollDice() {
     setState(() {
-      numberLeftDice = Random().nextInt(6) + 1;
-      numberRightDice = Random().nextInt(6) + 1;
+      _dice.roll();
     });
   }
 
@@ -61,7 +30,7 @@ class _DadoosBodyState extends State<DadoosBody> {
             children: [
               Expanded(
                 child: TextButton(
-                  child: Image.asset('assets/images/dado$numberLeftDice.png'),
+                  child: Image.asset('assets/images/dado${_dice.leftValue}.png'),
                   onPressed: () {
                     rollDice();
                   },
@@ -69,7 +38,7 @@ class _DadoosBodyState extends State<DadoosBody> {
               ),
               Expanded(
                 child: TextButton(
-                  child: Image.asset('assets/images/dado$numberRightDice.png'),
+                  child: Image.asset('assets/images/dado${_dice.rightValue}.png'),
                   onPressed: () {
                     rollDice();
                   },
