@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
     setState(() {
       _dice.roll();
     });
-  }
+  } 
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   padding: const EdgeInsets.only(top: 10),
                   child: TextButton(
                     child: Text(
-                      'click here to roll the dices!',
+                      'click here to roll the dice!',
                       style: GoogleFonts.sourGummy(
                         textStyle: TextStyle(
                           fontWeight: FontWeight.bold,
