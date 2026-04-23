@@ -1,5 +1,5 @@
 name: dadoos
-description: "my card"
+description: "A simple, playful dice rolling app built with Flutter."
 
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
