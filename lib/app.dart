@@ -20,26 +20,15 @@ class Dadoos extends StatelessWidget {
           primary: primary,
           surface: background,
         ),
-        appBarTheme: AppBarTheme(
-          backgroundColor: primary,
-          centerTitle: true,
-          titleTextStyle: GoogleFonts.sourGummy(
-            fontWeight: FontWeight.w800,
-            color: Colors.white,
-            fontSize: 35,
-          ),
-        ),
         textTheme: TextTheme(
-          headlineMedium: GoogleFonts.sourGummy(
-            fontWeight: FontWeight.bold,
-            fontSize: 30,
+          headlineMedium: GoogleFonts.jersey10(
+            fontSize: 35,
             color: Colors.white,
           ),
         ),
       ),
-      home: Scaffold(
-        appBar: AppBar(title: const Text('dadoos')),
-        body: const HomeScreen(),
+      home: const Scaffold(
+        body: SafeArea(child: HomeScreen()),
       ),
     );
   }

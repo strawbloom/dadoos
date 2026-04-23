@@ -101,9 +101,8 @@ class _HomeScreenState extends State<HomeScreen>
                 onPressed: rollDice,
                 child: Text(
                   'click here to roll the dice!',
-                  style: GoogleFonts.sourGummy(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
+                  style: GoogleFonts.jersey10(
+                    fontSize: 35,
                     color: Colors.white,
                   ),
                 ),
