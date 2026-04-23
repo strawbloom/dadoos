@@ -73,40 +73,45 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Row(
+    return Center(
+      child: ConstrainedBox(
+        constraints: const BoxConstraints(maxWidth: 480),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              child: TextButton(
-                onPressed: rollDice,
-                child: _buildDie(_dice.leftValue),
-              ),
+            Row(
+              children: [
+                Expanded(
+                  child: TextButton(
+                    onPressed: rollDice,
+                    child: _buildDie(_dice.leftValue),
+                  ),
+                ),
+                Expanded(
+                  child: TextButton(
+                    onPressed: rollDice,
+                    child: _buildDie(_dice.rightValue),
+                  ),
+                ),
+              ],
             ),
-            Expanded(
+            Padding(
+              padding: const EdgeInsets.only(top: 10),
               child: TextButton(
                 onPressed: rollDice,
-                child: _buildDie(_dice.rightValue),
+                child: Text(
+                  'click here to roll the dice!',
+                  style: GoogleFonts.sourGummy(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
           ],
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 10),
-          child: TextButton(
-            onPressed: rollDice,
-            child: Text(
-              'click here to roll the dice!',
-              style: GoogleFonts.sourGummy(
-                fontWeight: FontWeight.bold,
-                fontSize: 30,
-                color: Colors.white,
-              ),
-            ),
-          ),
-        ),
-      ],
+      ),
     );
   }
 }
