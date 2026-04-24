@@ -2,15 +2,15 @@
 
 A simple, playful dice rolling app built with Flutter. Tap a die or the button to tumble two dice with a quick shake-and-settle animation.
 
+![Dadoos preview](docs/preview.gif)
+
 > Live demo: **https://kevingcm.github.io/dadoos/** (auto-deployed from `master`)
->
-> Screenshot / GIF: _add `docs/preview.gif` and reference it here._
 
 ## Features
 
 - Two-dice roll with a damped shake animation (`AnimationController`)
 - Custom Material theme centered on a soft pink palette
-- Google Fonts (`Sour Gummy`) typography
+- Google Fonts (`Jersey 10`) typography
 - Splash screen via `flutter_native_splash`
 - Runs on Android, iOS, Web, Windows, macOS, and Linux
 
